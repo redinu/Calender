@@ -16,8 +16,8 @@ public class DisplayCalender {
 		 System.out.println("Enter the month");
 		 int month = scn.nextInt();
 		
-		 System.out.println("Enter the date");
-		 int date = scn.nextInt();
+		 
+		 int date = 1;
 
 		PrintCalender(year, month, date);
 
@@ -29,7 +29,7 @@ public class DisplayCalender {
 		String daysInWeek[] = { "Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat" };
 		GregorianCalendar gc = new GregorianCalendar();
 		
-		gc.set(year, month, date);
+		gc.set(year, month-1, date);
 	
 
 		System.out.print(months[gc.get(Calendar.MONTH)]);
@@ -41,7 +41,8 @@ public class DisplayCalender {
 		}
 		System.out.println();
 
-		int firstDayOfWeek = gc.get(Calendar.DAY_OF_WEEK) - 1;
+		int firstDayOfWeek = gc.get(Calendar.DAY_OF_WEEK)-1;
+		
 		int daysInMonth = gc.getActualMaximum(Calendar.DAY_OF_MONTH);
 
 		int dayOfTheWeek = 0;
